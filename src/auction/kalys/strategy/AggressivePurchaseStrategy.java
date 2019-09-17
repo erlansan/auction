@@ -1,4 +1,4 @@
-package kalys.strategy;
+package auction.kalys.strategy;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

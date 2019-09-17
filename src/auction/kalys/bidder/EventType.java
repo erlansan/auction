@@ -1,4 +1,4 @@
-package kalys.bidder;
+package auction.kalys.bidder;
 
 public enum EventType {
     WIN(1),

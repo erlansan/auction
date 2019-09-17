@@ -1,6 +1,4 @@
-package kalys.bidder;
-
-import kalys.analyser.*;
+package auction.kalys.bidder;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -38,8 +36,8 @@ public class EventSourceImpl implements EventSource{
     }
 
     @Override
-    public List<BidForModel> getBidForModel(){
-        return events.stream().map(event -> BidForModel.is(event.getProductBid(), event.getOpponentBid())).collect(Collectors.toList());
+    public int getAvgOpponentValue() {
+        return (events.stream().mapToInt(Event::getOpponentBid).sum() / events.size());
     }
 
     @Override

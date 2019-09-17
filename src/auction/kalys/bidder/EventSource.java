@@ -1,8 +1,5 @@
-package kalys.bidder;
+package auction.kalys.bidder;
 
-import analyser.BidForModel;
-
-import java.util.List;
 
 /**
  * Saves all events, that are happened during the auction
@@ -31,7 +28,6 @@ public interface EventSource {
      *
      * @return structure for model
      */
-    List<BidForModel> getBidForModel();
 
     /**
      *
@@ -42,4 +38,6 @@ public interface EventSource {
      * @return production quantity
      */
     int analyseProductionQuantity(boolean opponent);
+
+    int getAvgOpponentValue();
 }

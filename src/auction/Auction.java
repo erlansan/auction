@@ -1,6 +1,7 @@
 package auction;
 
 import auction.erlan.ErlanBidder;
+import auction.kalys.bidder.KalysBidder;
 
 public class Auction {
     public static void main(String[] args) {

@@ -6,7 +6,7 @@ import auction.kalys.strategy.AggressivePurchaseStrategy;
 import auction.kalys.strategy.CalmPurchaseStrategy;
 import auction.kalys.strategy.PurchaseStrategy;
 
-public class BidderImpl implements Bidder {
+public class KalysBidder implements Bidder {
 
     private int productionQuantity;
     private int cashLimit;

@@ -54,6 +54,9 @@ public class KalysBidder implements Bidder {
 
 
     private int placeBidFromStory() {
+        if(cashLimit == 0){
+            return 0;
+        }
         this.checkState();
         int opponentBid = this.eventSourceImpl.getAvgOpponentValue();
 
@@ -66,15 +69,15 @@ public class KalysBidder implements Bidder {
         if(finalBid == opponentBid){
             finalBid++;
         }
+        if(cashLimit < finalBid){
+            return cashLimit;
+        }
 
         return finalBid;
     }
 
 
     private void saveBidsInfo(int own, int other) {
-        if(own > cashLimit){
-            throw new RuntimeException("It's not enough of cash limit to make some bid");
-        }
         Event event = Event.is(own, other);
         cashLimit -= own;
         productionQuantity -= 2;

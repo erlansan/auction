@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 
 public class CalmPurchaseStrategy extends PurchaseStrategy {
 
-    private final double MULTIPLIER = 10.0;
+    private final double MULTIPLIER = 1.5;
 
     @Override
     public int placeBid(int bid, int cashLimit) {

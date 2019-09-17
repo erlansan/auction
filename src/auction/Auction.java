@@ -1,13 +1,14 @@
 package auction;
 
 import auction.erlan.ErlanBidder;
+import auction.kalys.bidder.KalysBidder;
 
 public class Auction {
     public static void main(String[] args) {
-        Bidder kBidder = new ErlanBidder();
+        Bidder kBidder = new KalysBidder();
         Bidder eBidder = new ErlanBidder();
 
-        int quantity = 30;
+        int quantity = 12;
         int cash = 30;
 
         int kalysWin = 0;
@@ -20,6 +21,7 @@ public class Auction {
         while(quantity != 0)
         {
             System.out.print("Round " + rounds + "): ");
+            rounds++;
             if(2<=quantity)
             {
                 int kBid = kBidder.placeBid();

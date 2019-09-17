@@ -37,7 +37,8 @@ public class EventSourceImpl implements EventSource{
 
     @Override
     public int getAvgOpponentValue() {
-        return (events.stream().mapToInt(Event::getOpponentBid).sum() / events.size());
+        return (int) (events.stream().filter(event -> EventType.LOSS.equals(event.getType())).mapToInt(Event::getOpponentBid).sum()
+                        / events.stream().filter(event -> EventType.LOSS.equals(event.getType())).count());
     }
 
     @Override

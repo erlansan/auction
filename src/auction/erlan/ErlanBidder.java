@@ -10,7 +10,7 @@ public class ErlanBidder implements Bidder {
     private int cash = 0;
 
     private int totalRounds = 0;
-    private int currentRound = 0;
+    private int currentRound = 1;
 
     public ErlanBidder() {
         //nothing happens;
@@ -36,17 +36,22 @@ public class ErlanBidder implements Bidder {
             return 0;
         }
 
-        if(0==currentRound)
+        if(1==currentRound)
         {
+            currentRound++;
             return 0;
         }
 
         int bid = cash/(totalRounds - currentRound) + 1;
-        if(bid<=cash)
+        currentRound++;
+        if(bid<cash)
         {
+            cash -= bid;
             return bid;
         } else {
-            return cash;
+            bid = cash;
+            cash -= bid;
+            return bid;
         }
     }
 

@@ -1,3 +1,5 @@
+package auction;
+
 public class KalysBidder implements Bidder {
     @Override
     public void init(int quantity, int cash) {

@@ -1,3 +1,5 @@
+package auction;
+
 /**
  * Represents a bidder for the action.
  */

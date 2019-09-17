@@ -1,3 +1,7 @@
+package auction;
+
+import auction.erlan.ErlanBidder;
+
 public class Auction {
     public static void main(String[] args) {
         Bidder kBidder = new KalysBidder();

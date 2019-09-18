@@ -37,6 +37,7 @@ public class KalysBidder implements Bidder {
     @Override
     public int placeBid() {
         if(eventSourceImpl.isEmpty()) {
+            cashLimit--;
             return 1;
         }
         else {
